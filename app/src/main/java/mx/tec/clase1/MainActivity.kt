@@ -89,4 +89,9 @@ class MainActivity : AppCompatActivity() {
         Log.e("LOGS", "ERROR")
         Log.wtf("LOGS", "WHAT A TERRIBLE FAILURE")
     }
+
+    fun irAComposeActivity(view: View){
+        var intent = Intent(this, ComposeActivity::class.java)
+        startActivity(intent)
+    }
 }
