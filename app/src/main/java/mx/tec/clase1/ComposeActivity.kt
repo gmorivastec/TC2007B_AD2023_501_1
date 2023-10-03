@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -47,7 +48,7 @@ class ComposeActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //botoncito()
-                    Ejemplo1(this)
+                    EjemplitoLista()
                 }
             }
         }
@@ -103,6 +104,50 @@ fun Ejemplo1(activity: Activity? = null) {
     }
 
 }
+
+@Composable
+fun EjemplitoLista() {
+    // 2 tipos de lista
+    // "regular" - ya sabemos cuánto mide, lo cargamos en batch
+    // "lazy" - cargamos elementos conforme nos hacemos de ellos
+
+    // la "regular" - non-lazy
+    Column {
+        /*
+        listRow(R.drawable.puppy, "un perrito")
+        listRow(R.drawable.puppy, "un perrito 2")
+        listRow(R.drawable.puppy, "un perrito 3")
+        listRow(R.drawable.puppy, "un perrito 4")
+        */
+        //listaDePerritos(nombres = listOf<String>("fido", "firulais", "fifi", "killer"))
+
+        // la "lazy"
+        LazyColumn {
+
+            // diferencia principal - utilizamos bloques llamados "item"s para agregar elementos
+            item {
+                listRow(id = R.drawable.puppy, text = "perrito prueba")
+            }
+
+            // otra opción - por lotes (batch)
+            items(3){ i ->
+                listRow(id = R.drawable.puppy, text = "perrito $i")
+            }
+        }
+    }
+         
+
+}
+
+@Composable
+fun listaDePerritos(nombres : List<String>){
+    Column {
+        nombres.forEach { perritoActual ->
+            listRow(text = perritoActual, id = R.drawable.puppy)
+        }
+    }
+}
+
 @Composable
 fun botonSaludador(activity: Activity? = null){
     Button(

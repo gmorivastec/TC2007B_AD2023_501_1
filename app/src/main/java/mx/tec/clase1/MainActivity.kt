@@ -94,4 +94,9 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, ComposeActivity::class.java)
         startActivity(intent)
     }
+
+    fun irAFirebaseActivity(view: View){
+        var intent = Intent(this, FirebaseActivity::class.java)
+        startActivity(intent)
+    }
 }

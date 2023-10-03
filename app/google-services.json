@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719079813289",
+    "project_id": "tc2007b-ad2023-501-nat",
+    "storage_bucket": "tc2007b-ad2023-501-nat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719079813289:android:d6e28dc99ac28b0487b9b8",
+        "android_client_info": {
+          "package_name": "mx.tec.clase1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtrh9aGsnxWrpriJ-6EVNCDf9xryV8uyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
